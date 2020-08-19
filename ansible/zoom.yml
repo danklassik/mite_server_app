@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: ZOOM
+    win_chocolatey:
+       name: zoom
+       state: latest
+

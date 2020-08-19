@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Install Firefox
+    win_chocolatey:
+       name: firefox
+       state: latest
+

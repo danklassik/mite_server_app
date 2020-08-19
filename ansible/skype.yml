@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Install Skype
+    win_chocolatey:
+       name: skype
+       state: latest
+

@@ -1,0 +1,6 @@
+﻿.idea/
+__pycache__/
+venv/
+desktop.ini
+ansible.cfg
+conf.txt

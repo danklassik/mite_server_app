@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Mosilla Thunderbird
+    win_chocolatey:
+       name: thunderbird
+       state: latest
+

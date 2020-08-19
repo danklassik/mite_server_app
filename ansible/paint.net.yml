@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Paint NET
+    win_chocolatey:
+       name: paint.net
+       state: latest
+

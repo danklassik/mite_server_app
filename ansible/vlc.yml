@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Install VLC Player
+    win_chocolatey:
+       name: vlc
+       state: latest
+

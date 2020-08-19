@@ -1,0 +1,51 @@
+body {
+    background: #eeeeee;
+}
+
+.button-test {
+    width: 100%;
+    min-height: 210px;
+    border: 1px solid #b3b7bb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 35px;
+    background: #FFF;
+}
+
+.button-test .run {
+    display: inline-block;
+    width: 60px;
+}
+
+
+.button-test span {
+    font-size: 12px;
+    display: block;
+    cursor: default;
+}
+.button-test span strong {
+    display: inline-block;
+    min-width: 70px;
+}
+
+
+.button-test-about {
+    display: block;
+    min-height: 105px;
+}
+
+.button-test-fnc {
+    display: block;
+    text-align: center;
+    color: #1b1e21;
+    border: 1px solid #1279cd;
+    background: #aad6eb;
+    padding: 5px 10px;
+    margin-top: 7px;
+}
+
+.button-test-fnc:hover {
+    text-decoration: none;
+    background: #a3cce1;
+    color: #1b1e21;
+}
