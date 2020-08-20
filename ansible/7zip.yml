@@ -1,3 +1,5 @@
+# 7 ZIP archivator
+# Это описание программы
 ---
 - hosts: all
   tasks:
@@ -5,4 +7,3 @@
     win_chocolatey:
        name: 7zip
        state: present
-

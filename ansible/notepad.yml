@@ -1,3 +1,5 @@
+# Notepad ++
+# Замечательный текстовый редактор имеющий миллион функций и распространяющийся <strong>АБСОЛЮТНО БЕСПЛАТНО</strong>
 ---
 - hosts: all
   tasks:
@@ -5,3 +7,12 @@
     win_chocolatey:
        name: notepadplusplus
        state: present
+    tags:
+      - install
+
+  - name: Uninstall Notepad
+    win_chocolatey:
+       name: notepadplusplus
+       state: absent
+    tags:
+      - uninstall

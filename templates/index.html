@@ -3,386 +3,48 @@
     <div class="col-md-12">
         <h1 align="center">Программы доступные вам для установки</h1>
     </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>7-ZIP</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3"><img src="{{ url_for('static', filename='img/7zip.svg') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9 col-sm-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
+
+    {% for i in range(0, app_count) %}
+        <div class="col-md-6">
+            <div class="button-test">
+                <h4>{{ app_name[i] }}</h4>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3"><img src="{{ url_for('static', filename='img/'+app_addr[i]+'.png') }}" width="100%" alt="" /></div>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="button-test-about">
+                                <p>{{ app_descr[i] | safe }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-sm-5">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6 col-sm-7">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/7zip">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/7zip-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
+                        <div class="col-md-6 col-sm-5">
+                            <span><strong>Размер:</strong>10 мб</span>
+                            <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>Notepad ++</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/notepad.png') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/notepad">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/notepad-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
+                        <div class="col-md-6 col-sm-7">
+                            <div class="btn-group">
+                              <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
+                                <a class="run" href="/install/{{ app_addr[i] }}">
+                                  <img src="{{ url_for('static', filename='img/icon/install.png') }}" width="26" alt="" />
+                                </a>
+                              </button>
+                              <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
+                                <a class="run" href="#">
+                                  <img src="{{ url_for('static', filename='img/icon/mail.png') }}" width="34" alt="" />
+                                </a>
+                              </button>
+                              <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
+                                <a class="run" href="/uninstall/{{ app_addr[i] }}">
+                                   <img src="{{ url_for('static', filename='img/icon/trash.png') }}" width="26" alt="" />
+                                </a>
+                              </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>Windows Office 365</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/Office365.png') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/office360">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/office360-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>Opera</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/Opera.svg') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/opera">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="opera-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>Paint NET</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/paint.net.png') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/paint.net">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/paint.net-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>Skype</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/skype.png') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/skype">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/skype-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>TeamViewer</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/teamviewer.png') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/teamviewer">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/teamviewer-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>Thunderbird</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/thunderbird.png') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/thunderbird">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/thunderbird-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>VLC Player</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/vlc.png') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/vlc">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/vlc-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="button-test">
-            <h4>ZOOM</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3"><img src="{{ url_for('static', filename='img/zoom.png') }}" width="100%" alt="" /></div>
-                    <div class="col-md-9">
-                        <div class="button-test-about">
-                            <p>Бесплатный и очень качесвтенный архиватор, поддерживающий все современные форматы.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span><strong>Размер:</strong>10 мб</span>
-                        <span><strong data-toggle="tooltip" data-placement="right" title="Шанс установить программу">Качество:</strong>8/10</span>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                          <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Установить программу" type="button">
-                            <a class="run" href="/program/zoom">
-                              <img src="{{ url_for('static', filename='img/install.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Сообщить админам что программа не устанавливается" type="button">
-                            <a class="run" href="#">
-                              <img src="{{ url_for('static', filename='img/mail.png') }}" width="34" alt="" />
-                            </a>
-                          </button>
-                          <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Удалить программу" type="button">
-                            <a class="run" href="/program/zoom-del">
-                               <img src="{{ url_for('static', filename='img/trash.png') }}" width="26" alt="" />
-                            </a>
-                          </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
+
 {% endblock %}
 
 {% block scripts %}

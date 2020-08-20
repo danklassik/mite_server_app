@@ -1,7 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: Uninstall Notepad++
-    win_chocolatey:
-       name: notepadplusplus
-       state: absent
