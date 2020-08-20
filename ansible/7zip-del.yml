@@ -1,7 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: Uninstall 7zip
-    win_chocolatey:
-       name: 7zip
-       state: absent

@@ -1,8 +1,19 @@
+# FireFox 
+# Mozilla Firefox, or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation.
 ---
 - hosts: all
   tasks:
-  - name: Install Firefox
+  - name: Install FireFox
     win_chocolatey:
-       name: firefox
-       state: latest
+       name: notepadplusplus
+       state: firefox
+    tags:
+      - install
+
+  - name: Uninstall FireFox
+    win_chocolatey:
+       name: notepadplusplus
+       state: firefox
+    tags:
+      - uninstall
 

@@ -1,8 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: Install OFFICE365
-    win_chocolatey:
-       name: adobereader
-       state: absent
-

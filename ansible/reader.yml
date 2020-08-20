@@ -1,8 +1,18 @@
+# Adobe Acrobat Reader DC
+# Adobe Acrobat Reader is the most reliable, free global standard document management system available. View, edit, sign, and annotate PDF documents
 ---
 - hosts: all
   tasks:
-  - name: Install Adobe Reader
+  - name: Install Reader
     win_chocolatey:
        name: adobereader
-       state: latest
+       state: present
+    tags:
+      - install
 
+  - name: Uninstall Reader
+    win_chocolatey:
+       name: adobereader
+       state: absent
+    tags:
+      - uninstall
