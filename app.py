@@ -1,7 +1,15 @@
 from flask import Flask, render_template, redirect, url_for, request
-import subprocess
+import subprocess, os
+from glob import glob
 
 app = Flask(__name__)
+
+def find_ext(dr, ext):
+    return glob(os.path.join("{}".format(dr),"*.{}".format(ext)))
+
+list_files = find_ext("./ansible","yml")
+for x in range(len(list_files)):
+    print(('{}'+") "+"{}").format(x+1, list_files[x][10:]))
 
 
 @app.route('/')
