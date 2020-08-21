@@ -1,0 +1,19 @@
+# 7-ZIP 
+# 7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as "archives".
+---
+- hosts: all
+  tasks:
+  - name: Install 7ZIP
+    win_chocolatey:
+       name: notepadplusplus
+       state: 7zip
+    tags:
+      - install
+
+  - name: Uninstall 7ZIP
+    win_chocolatey:
+       name: notepadplusplus
+       state: 7zip
+    tags:
+      - uninstall
+

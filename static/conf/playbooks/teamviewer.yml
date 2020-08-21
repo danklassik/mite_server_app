@@ -1,0 +1,19 @@
+# TeamViewer 15
+# TeamViewer is a proprietary software application for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers
+---
+- hosts: all
+  tasks:
+  - name: Install TeamViewer
+    win_chocolatey:
+       name: teamviewer
+       state: present
+    tags:
+      - install
+
+  - name: Uninstall TeamViewer
+    win_chocolatey:
+       name: teamviewer
+       state: absent
+    tags:
+      - uninstall
+

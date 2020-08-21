@@ -1,0 +1,19 @@
+# Mozilla Thunderbird
+# Mozilla Thunderbird is a free and open-source cross-platform email client, news client, RSS, and chat client developed by the Mozilla Foundation.
+---
+- hosts: all
+  tasks:
+  - name: Install Reader
+    win_chocolatey:
+       name: thunderbird
+       state: present
+    tags:
+      - install
+
+  - name: Uninstall Reader
+    win_chocolatey:
+       name: thunderbird
+       state: absent
+    tags:
+      - uninstall
+

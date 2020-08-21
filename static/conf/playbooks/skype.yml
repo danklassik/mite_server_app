@@ -1,0 +1,21 @@
+# Skype
+# Skype is a telecommunications application that specializes in providing video chat and voice calls between computers, tablets, mobile devices, the Xbox One console, and smartwatches over the Internet.
+---
+- hosts: all
+  tasks:
+  - name: Install Skype
+    win_chocolatey:
+       name: skype
+       state: present
+    tags:
+      - install
+
+  - name: Uninstall Skype
+    win_chocolatey:
+       name: skype
+       state: absent
+    tags:
+      - uninstall
+
+
+

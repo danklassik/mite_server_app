@@ -1,0 +1,18 @@
+# Office 365
+# Office 365 is a line of subscription services offered by Microsoft as part of the Microsoft Office product line
+---
+- hosts: all
+  tasks:
+  - name: Install Office 365
+    win_chocolatey:
+       name: office365business
+       state: present
+    tags:
+      - install
+
+  - name: Uninstall Office 365
+    win_chocolatey:
+       name: office365business
+       state: absent
+    tags:
+      - uninstall

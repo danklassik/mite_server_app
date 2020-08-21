@@ -1,0 +1,18 @@
+# Opera
+# Opera is a freeware web browser for Microsoft Windows, Android, iOS, macOS, and Linux operating systems developed by Opera Software.
+---
+- hosts: all
+  tasks:
+  - name: Install Opera
+    win_chocolatey:
+       name: opera
+       state: present
+    tags:
+      - install
+
+  - name: Uninstall Opera
+    win_chocolatey:
+       name: opera
+       state: absent
+    tags:
+      - uninstall

@@ -10,7 +10,7 @@
                 <h4>{{ app_name[i] }}</h4>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3 col-sm-3"><img src="{{ url_for('static', filename='img/'+app_addr[i]+'.png') }}" width="100%" alt="" /></div>
+                        <div class="col-md-3 col-sm-3"><img src="{{ url_for('static', filename='conf/img/'+app_addr[i]+'.png') }}" width="100%" alt="" /></div>
                         <div class="col-md-9 col-sm-9">
                             <div class="button-test-about">
                                 <p>{{ app_descr[i] | safe }}</p>
@@ -22,17 +22,17 @@
                             <div class="btn-group">
                               <button class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Install application" type="button">
                                 <a class="run" href="/install/{{ app_addr[i] }}">
-                                  <img src="{{ url_for('static', filename='img/icon/install.png') }}" width="26" alt="" />
+                                  <img src="{{ url_for('static', filename='icon/install.png') }}" width="26" alt="" />
                                 </a>
                               </button>
                               <button class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Inform admins that the program is not installed" type="button">
                                 <a class="run" href="#">
-                                  <img src="{{ url_for('static', filename='img/icon/mail.png') }}" width="34" alt="" />
+                                  <img src="{{ url_for('static', filename='icon/mail.png') }}" width="34" alt="" />
                                 </a>
                               </button>
                               <button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Remote application" type="button">
                                 <a class="run" href="/uninstall/{{ app_addr[i] }}">
-                                   <img src="{{ url_for('static', filename='img/icon/trash.png') }}" width="26" alt="" />
+                                   <img src="{{ url_for('static', filename='icon/trash.png') }}" width="26" alt="" />
                                 </a>
                               </button>
                             </div>

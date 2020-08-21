@@ -1,0 +1,19 @@
+# VLC Media Player
+# VLC media player is a free and open-source, portable, cross-platform media player software and streaming media server developed by the VideoLAN project.
+---
+- hosts: all
+  tasks:
+  - name: Install Reader
+    win_chocolatey:
+       name: vlc
+       state: present
+    tags:
+      - install
+
+  - name: Uninstall Reader
+    win_chocolatey:
+       name: vlc
+       state: absent
+    tags:
+      - uninstall
+

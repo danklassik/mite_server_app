@@ -1,0 +1,20 @@
+# ZOOM
+# Zoom Video Communications, Inc. is an American communications technology company headquartered in San Jose, California.
+---
+- hosts: all
+  tasks:
+  - name: Install Zoom
+    win_chocolatey:
+       name: zoom
+       state: present
+    tags:
+      - install
+
+  - name: Uninstall Zoom
+    win_chocolatey:
+       name: zoom
+       state: absent
+    tags:
+      - uninstall
+
+

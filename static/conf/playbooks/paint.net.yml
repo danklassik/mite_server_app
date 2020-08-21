@@ -1,0 +1,18 @@
+# Paint.NET
+# Paint.net is a freeware raster graphics editor program for Microsoft Windows, developed on the .NET Framework
+---
+- hosts: all
+  tasks:
+  - name: Install Paint NET
+    win_chocolatey:
+       name: paint.net
+       state: present
+    tags:
+      - install
+
+  - name: Uninstall Paint NET
+    win_chocolatey:
+       name: paint.net
+       state: absent
+    tags:
+      - uninstall
