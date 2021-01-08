@@ -33,7 +33,7 @@ ansible_winrm_server_cert_validation=ignore<br>
 ansible_winrm_scheme=https<br>
 ansible_winrm_kerberos_delegation=true<br>
 
-Так же в случае с AD вам пройдётся установить kubectl и прописать в /etc/krb5.conf данные по своему домену.
+Так же в случае с AD вам пройдётся установить Kerberos и прописать в /etc/krb5.conf данные по своему домену.
 
 * Последнее что необходимо сделать, выполнить вот этот скрипт на всех Windows ПК к которым хотите предоставить доступ для Ansible.
 https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
